@@ -1,0 +1,35 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<form method="post">
+
+    @foreach (var publication in Model.Publications)
+    {
+        <div id="container">
+            <div id="nickname">
+                @publication.NickName
+            </div>
+
+            <div id="title">
+                @publication.Title
+            </div>
+
+            <div id="story">
+                @publication.Story
+            </div>
+
+            <div id="edit">
+                <a asp-page="./EditPublication" asp-route-id="@publication.Id">Edit</a>
+            </div>
+            <div id="delete">
+                <button type="submit" asp-page-handler="delete"
+                        asp-route-id="@publication.Id">
+                    Delete
+                </button>
+            </div>
+        </div>
+    }
+</form>

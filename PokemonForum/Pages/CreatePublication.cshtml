@@ -1,0 +1,34 @@
+﻿@page
+@model CreatePublicationModel
+@{
+}
+
+<form method="post">
+    <div id="container">
+        <div id="header">
+            <h2>Glad you decided to post something!</h2>
+            <h3>Please share your PokeStory!</h3>
+        </div>
+
+        <div id="nickname">
+            Your NickName: <input asp-for="Publication.NickName">
+        </div>
+
+        <div id="title">
+            Publication Title: <input asp-for="Publication.Title">
+        </div>
+
+        <div id="story">
+            <div id="title">Tell us your story:</div>
+            <div id="text">
+                <input asp-for="Publication.Story">
+            </div>
+        </div>
+
+        <div id="validations" asp-validation-summary="All"></div>
+
+        <div id="submit">
+            <input type="submit">
+        </div>
+    </div>
+</form>
