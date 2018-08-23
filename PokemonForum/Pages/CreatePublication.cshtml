@@ -3,32 +3,39 @@
 @{
 }
 
+
+<h2>Glad you decided to post something!</h2>
+<h3>Please share your PokeStory!</h3>
+
 <form method="post">
-    <div id="container">
-        <div id="header">
-            <h2>Glad you decided to post something!</h2>
-            <h3>Please share your PokeStory!</h3>
-        </div>
+    <label>NickName:</label>
+    <div id="nickname">
+        <input asp-for="Publication.NickName">
+    </div>
 
-        <div id="nickname">
-            Your NickName: <input asp-for="Publication.NickName">
-        </div>
+    <label>Title:</label>
+    <div id="title">
+        <input asp-for="Publication.Title">
+    </div>
 
-        <div id="title">
-            Publication Title: <input asp-for="Publication.Title">
-        </div>
+    <label>Tell us your story:</label>
+    <div id="story">
+        <input id="story" asp-for="Publication.Story">
+    </div>
 
-        <div id="story">
-            <div id="title">Tell us your story:</div>
-            <div id="text">
-                <input asp-for="Publication.Story">
-            </div>
-        </div>
+    <div id="validations" asp-validation-summary="All"></div>
 
-        <div id="validations" asp-validation-summary="All"></div>
-
-        <div id="submit">
-            <input type="submit">
-        </div>
+    <div id="submit">
+        <input type="submit">
     </div>
 </form>
+
+<style>
+    #header {
+        text-align: center;
+    }
+
+    input[type="text"] {
+        width: 800px;
+    }
+</style>

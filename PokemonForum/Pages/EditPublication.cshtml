@@ -5,23 +5,23 @@
 
 <h2>Editing Publication Number: @Model.Publication.Id, made by @Model.Publication.NickName</h2>
 
-<form method="post">
+<form method="post" id="bg">
     <div>
         <input asp-for="Publication.Id" type="hidden" />
     </div>
+    <label>NickName:</label>
     <div id="nickname">
-        NickName: <input asp-for="Publication.NickName">
+        <input asp-for="Publication.NickName">
     </div>
 
+    <label>Title:</label>
     <div id="title">
-        Title: <input asp-for="Publication.Title">
+        <input asp-for="Publication.Title">
     </div>
 
+    <label>Tell us your story:</label>
     <div id="story">
-        <div id="title">Tell us your story:</div>
-        <div id="text">
-            <input asp-for="Publication.Story">
-        </div>
+        <input id="story" asp-for="Publication.Story">
     </div>
 
     <div id="validations" asp-validation-summary="All"></div>
@@ -30,3 +30,13 @@
         <input type="submit">
     </div>
 </form>
+
+<style>
+    input[type="text"] {
+        width: 800px;
+    }
+    #header {
+        text-align: center;
+    }
+
+</style>
